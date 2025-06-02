@@ -1,0 +1,25 @@
+
+=== Best TopK per Approach Based on Highest Average F2 Across Projects ===
+     Approach  Best_TopK  Average_Best_F2
+4  Embeddings          5         0.501674
+
+=== Best TopK per Project and Approach (Based on Max F2) ===
+  Approach ProjectName  TopK  Precision   Recall       F1       F2
+Embeddings    CM1-NASA     5   0.300000 0.733333 0.425806 0.568966
+Embeddings   Dronology     4   0.386364 0.695455 0.496753 0.599530
+Embeddings       GANNT     4   0.544118 0.544118 0.544118 0.544118
+Embeddings       MODIS    19   0.088643 0.780488 0.159204 0.304762
+Embeddings        WARC     5   0.323810 0.750000 0.452328 0.593714
+
+=== All Rows Using Best TopK per Approach (Across All Projects) ===
+  Approach ProjectName  TopK  Precision   Recall       F1       F2
+Embeddings    CM1-NASA     5   0.300000 0.733333 0.425806 0.568966
+Embeddings   Dronology     5   0.323232 0.727273 0.447552 0.581818
+Embeddings       GANNT     5   0.447059 0.558824 0.496732 0.532213
+Embeddings       MODIS     5   0.126316 0.292683 0.176471 0.231660
+Embeddings        WARC     5   0.323810 0.750000 0.452328 0.593714
+
+For Latex Table:
+
+Embeddings\textsubscript{GO} & 0.30 & 0.73 & 0.57 & 0.32 & 0.73 & 0.58 & 0.45 & 0.56 & 0.53 & 0.13 & 0.29 & 0.23 & 0.32 & 0.75 & 0.59 & 0.30 & 0.61 & 0.40  & 0.50 \\
+Embeddings\textsubscript{PO} & 0.30 & 0.73 & 0.57 & 0.39 & 0.70 & 0.60 & 0.54 & 0.54 & 0.54 & 0.09 & 0.78 & 0.30 & 0.32 & 0.75 & 0.59 & 0.33 & 0.70 & 0.42  & 0.52 \\

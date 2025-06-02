@@ -1,0 +1,88 @@
+
+{
+  "cache_dir": "./cache-r2r/GANNT-ensemble",
+
+  "gold_standard_configuration": {
+    "path": "./datasets/req2req/GANNT/answer.csv",
+    "hasHeader": "true"
+  },
+
+  "source_artifact_provider" : {
+    "name" : "text",
+    "args" : {
+      "artifact_type" : "requirement",
+      "path" : "./datasets/req2req/GANNT/high"
+    }
+  },
+  "target_artifact_provider" : {
+    "name" : "text",
+    "args" : {
+      "artifact_type" : "requirement",
+      "path" : "./datasets/req2req/GANNT/low"
+    }
+  },
+  "source_preprocessor" : {
+    "name" : "artifact",
+    "args" : {}
+  },
+  "target_preprocessor" : {
+    "name" : "artifact",
+    "args" : {}
+  },
+  "embedding_creator" : {
+    "name" : "mock",
+    "args" : { }
+  },
+  "source_store" : {
+    "name" : "custom",
+    "args" : { }
+  },
+  "target_store" : {
+    "name" : "custom",
+    "args" : {
+      "max_results" : "infinity"
+    }
+  },
+  "classifiers":  [
+    [
+      {
+        "name": "simple_ollama",
+        "args": {
+          "model": "gemma2:2b",
+          "seed": "133742243"
+        }
+      }
+    ],
+    [
+      {
+        "name": "simple_ollama",
+        "args": {
+          "model": "gemma2:9b",
+          "seed": "133742243"
+        }
+      },
+      {
+        "name": "simple_ollama",
+        "args": {
+          "model": "phi4",
+          "seed": "133742243"
+        }
+      },
+      {
+        "name": "simple_ollama",
+        "args": {
+          "model": "mistral-nemo",
+          "seed": "133742243"
+        }
+      }
+    ]
+  ],
+  "result_aggregator" : {
+    "name" : "any_connection",
+    "args" : {}
+  },
+  "tracelinkid_postprocessor" : {
+    "name" : "req2req",
+    "args" : {}
+  }
+}
